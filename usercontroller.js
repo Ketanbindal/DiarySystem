@@ -12,18 +12,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 const Filepath = path.join(__dirname, 'File');
 // app.set('views', path.join(__dirname, 'views'));
 // app.use(express.static(path.join(__dirname, 'public')));
-app.get('/',(req, res)=>
+app.get('/',(_req, res)=>
 {
     // res.redirect('index.html');
     res.render('index')
 });
 
-app.get('/create', (req, res)=>
+app.get('/create', (_req, res)=>
 {
     res.render('create');
     
 });
-app.get('/delete', async (req, res)=>
+app.get('/delete', async (_req, res)=>
 {
     file.readdir(Filepath,(err, files)=>
     {
@@ -144,12 +144,32 @@ app.post('/files_deleted',async (req, res)=>
     
 }
 )
-app.post('/filecreated', (req, res)=>
+app.post('/filecreated', async (req, res)=>
 {
     let data = req.body.file_data;
-    let filename = req.body.file_name;
+    let date = new Date();
+    
+    // Format the date (e.g., YYYY-MM-DD)
+    const filename = date.toISOString().split('T')[0];
+    console.log(filename);
+    let  shoulddo = 1;
+    // await file.readdir(Filepath,(err, files)=>
+    //     {
+    //         console.log(files)
+    //         files.forEach(element => {
+    //             console.log(element)
+    //             if(element === `${filename}.txt`)
+    //             {
+    //                 console.log("kitni diary likhega lwde");
+    //                 shoulddo = shoulddo*0;
+    //             }
+    //         });
+    //     })
+        console.log(shoulddo)
+        if(shoulddo===1)
+        {
     data = String(data);
-    file.writeFile(`${Filepath}/${filename}.txt`, data , (err)=>
+    await file.writeFile(`${Filepath}/${filename}.txt`, data , (err)=>
     {
         if(err)
         {
@@ -159,10 +179,13 @@ app.post('/filecreated', (req, res)=>
             console.log("le re lnd k bn gye teri file");
         }
     } )
-    res.send('file created');
-
+    res.redirect('/');
+        }
+        else{
+            res.send("file already exists");
+        }
 })
-app.get('/edit', (req, res)=>
+app.get('/edit', (_req, res)=>
 {
     file.readdir(Filepath,(err, files)=>
         {
@@ -193,5 +216,30 @@ catch(e){
     res.send(e);
 }
 });
+app.get('/read', (req, res)=>
+{
+    file.readdir(Filepath, (err, files)=>
+    {
+        if(err)
+        {
+            // throw err;
+            console.log(err);
+        }
+        res.render('readfile', {files});
+    })
+    
+});
+app.post('/Reading_file',(req, res)=>
+{
+    const filename = req.body.filename;
+    file.readFile(`${Filepath}/${filename}`, (err, data)=>
+    {
+        if(err)
+        {
+            console.log(err)
+        }
+        res.render('filetoread', {data})
+    })
+})
 app.listen('3000')
 

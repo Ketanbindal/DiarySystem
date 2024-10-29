@@ -1,106 +1,85 @@
-button 
-{
-    padding : 10px;
-}
-.file_data_inp{
-    width : 200px;
-    resize : vertical;
-    min-height: 300px;
-}/* General Reset */
+/* General reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-/* Body Styling */
 body {
-    font-family: Arial, sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
-    color: #333;
+    background-color: #f4f4f9;
 }
 
-/* Header Styling */
+/* Header styling */
 header {
+    margin-top: 20px;
+    margin-bottom: 30px;
     text-align: center;
-    margin-bottom: 10px;
 }
 
 header h1 {
-    font-size: 1.8em;
-    color: #0074d9;
-    font-weight: bold;
-    letter-spacing: 0.5px;
+    font-size: 2.5rem;
+    color: #333;
 }
 
-/* Section/Form Container Styling */
-section, form {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    width: 240px;
-    text-align: center;
-    margin-top: 10px;
-}
-
-/* Buttons Styling */
-button, button[type="submit"] {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 0.9em;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: 8px 0;
-    transition: background 0.3s;
-}
-
-/* Button Colors */
-#create {
-    background-color: #28a745;
-}
-#edit {
-    background-color: #ffc107;
-}
-#delete, button[type="submit"] {
-    background-color: #dc3545;
-}
-button:hover, button[type="submit"]:hover {
-    opacity: 0.9;
-}
-
-/* Label and Checkbox Styling */
-label {
-    font-size: 0.9rem;
-    color: #555;
+/* Section styling */
+section {
     display: flex;
-    align-items: center;
-    padding: 5px 0;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Button styling */
+button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-label:hover {
-    background-color: #f0f4f8;
-    border-radius: 3px;
+button:hover {
+    background-color: #357ABD;
+    transform: scale(1.05);
 }
 
-input[type="checkbox"] {
-    margin-right: 8px;
-    transform: scale(1.1);
-    cursor: pointer;
+/* Individual button colors */
+#create {
+    background-color: #28a745; /* Green */
 }
 
-/* Responsive for Small Screens */
-@media (max-width: 768px) {
-    section, form {
-        width: 90%;
-        padding: 15px;
-    }
+#edit {
+    background-color: #ffc107; /* Yellow */
+}
+
+#delete {
+    background-color: #dc3545; /* Red */
+}
+
+#read {
+    background-color: #17a2b8; /* Teal */
+}
+
+button:hover#edit {
+    background-color: #e0a800;
+}
+
+button:hover#create {
+    background-color: #218838;
+}
+
+button:hover#delete {
+    background-color: #c82333;
+}
+
+button:hover#read {
+    background-color: #138496;
 }

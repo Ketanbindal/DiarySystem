@@ -1,0 +1,38 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    color: #333;
+    padding: 20px;
+}
+
+/* Paragraph styling */
+p {
+    max-width: 600px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    color: #555;
+}
+
+/* Adding a subtle transition effect on hover */
+p:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
+}
+/*  */
