@@ -1,0 +1,106 @@
+button 
+{
+    padding : 10px;
+}
+.file_data_inp{
+    width : 200px;
+    resize : vertical;
+    min-height: 300px;
+}/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 1.8em;
+    color: #0074d9;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* Section/Form Container Styling */
+section, form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    width: 240px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Buttons Styling */
+button, button[type="submit"] {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 0.9em;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 8px 0;
+    transition: background 0.3s;
+}
+
+/* Button Colors */
+#create {
+    background-color: #28a745;
+}
+#edit {
+    background-color: #ffc107;
+}
+#delete, button[type="submit"] {
+    background-color: #dc3545;
+}
+button:hover, button[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+/* Label and Checkbox Styling */
+label {
+    font-size: 0.9rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+label:hover {
+    background-color: #f0f4f8;
+    border-radius: 3px;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Responsive for Small Screens */
+@media (max-width: 768px) {
+    section, form {
+        width: 90%;
+        padding: 15px;
+    }
+}

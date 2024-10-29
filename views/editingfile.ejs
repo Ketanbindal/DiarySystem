@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editing file</title>
+</head>
+<body>
+    <form action="/fileedited" method="POST">
+
+        <textarea type="text" placeholder="File content" class="file_data_inp" name="file_data" id="" required><%= data %></textarea>
+        <input type="hidden" name="file_name" value="<%= filename %>">
+        <button type="submit"> Submit </button>
+    </form>
+</body>
+</html>

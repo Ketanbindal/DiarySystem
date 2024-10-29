@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete file</title>
+</head>
+<body>
+    <form action="/files_deleted" method="POST">
+    <% files.forEach(file => { %>
+            <label>
+                <input type="checkbox" name="Filestodel" value="<%= file %>"> <%= file %>
+            </label>
+            <br>
+        
+    <% }); %>
+    <button type="submit">Delete Files</button>
+</form>
+</body>
+</html>
